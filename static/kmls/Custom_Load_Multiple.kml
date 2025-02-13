@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Load Multiple KML Files</name>
+
+    <!-- NetworkLink for KML 1 -->
+    <NetworkLink>
+      <name>KML File 1</name>
+      <Link>
+        <href>http://lg1:81/kmls/Finalized_Data_Points.kml</href>
+      </Link>
+    </NetworkLink>
+
+    <!-- NetworkLink for KML 2 -->
+    <NetworkLink>
+      <name>KML File 2</name>
+      <Link>
+        <href>http://lg1:81/kmls/Custom_Background_Final_Rest_Of_Country.kml</href>
+      </Link>
+    </NetworkLink>
+
+    <!-- NetworkLink for KML 3 -->
+    <NetworkLink>
+      <name>KML File 3</name>
+      <Link>
+        <href>http://lg1:81/kmls/Custom_Background_India_Country.kml</href>
+      </Link>
+    </NetworkLink>
+
+  </Document>
+</kml>

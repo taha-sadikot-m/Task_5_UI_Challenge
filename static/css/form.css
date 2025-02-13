@@ -1,0 +1,71 @@
+/* Form Container */
+.form-container {
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #2f363e;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+                inset -3px -3px 7px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #fff;
+}
+
+
+.form-container h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #29fd53;
+}
+
+
+.input-group {
+
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    background: #222;
+    border: none;
+    margin: 10px;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    color: #2f363e;
+    font-weight: bold;
+    background: #29fd53;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+                inset -3px -3px 7px rgba(0, 0, 0, 0.5);
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+

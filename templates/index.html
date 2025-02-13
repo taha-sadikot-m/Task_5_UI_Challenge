@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Navigation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabs.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/voice.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animation.css') }}">
+
+</head>
+
+<body>
+
+    <!-- 🔹 Navigation Bar (Tabs) -->
+    <ul class="navigation">
+        <li class="active">
+            <a href="#" onclick="loadPage('connect', this)">
+                <span class="icon">
+                    <ion-icon name="hammer"></ion-icon>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="loadPage('gemini', this)">
+                <span class="icon">
+                    <ion-icon name="logo-google"></ion-icon>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="loadPage('voice', this)">
+                <span class="icon">
+                    <ion-icon name="mic"></ion-icon>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="loadPage('model', this)">
+                <span class="icon">
+                    <ion-icon name="shapes"></ion-icon>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="#" onclick="loadPage('diwali', this)">
+                <span class="icon">
+                    <ion-icon name="sparkles"></ion-icon>
+                </span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- 🔹 Page Content will be loaded here -->
+    <div id="content">
+        {% include 'connect.html' %} <!-- Load default home page content -->
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
+
+<script>
+    showModel();
+    function showModel() {
+            document.getElementById('show').addEventListener('click', function (event) {
+    
+                (async function connectToAPI() {
+                    try {
+                        const response = await fetch('/show', {
+                            method: 'GET',
+                        });
+    
+                        const result = await response.json();
+    
+                        if (response.ok) {
+                           
+                            alert("SUCCESS");
+                        } else {
+                            
+                            alert("ERROR");
+                        }
+                    } catch (error) {
+                        
+                        alert("ERROR");
+                    }
+                })(); 
+            });
+    }
+    </script>
+
+<script>
+    showDiwali();
+    function showDiwali() {
+            document.getElementById('show-diwali').addEventListener('click', function (event) {
+    
+                (async function connectToAPI() {
+                    try {
+                        const response = await fetch('/diwali_show', {
+                            method: 'GET',
+                        });
+    
+                        const result = await response.json();
+    
+                        if (response.ok) {
+                           
+                            alert("SUCCESS");
+                        } else {
+                            
+                            alert("ERROR");
+                        }
+                    } catch (error) {
+                        alert("ERROR");
+                    }
+                })(); 
+            });
+    }
+    </script>
+    <script>
+        function loadPage(page, element) {
+            event.preventDefault(); // Prevent full-page reload
+
+            // Fetch page content
+            fetch('/' + page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("content").innerHTML = data;
+                    // Reinitialize multi-step form script after loading new content
+                    if (page === "connect") {
+                        initMultiStepForm();
+                        setupEventListeners();
+                    }
+                    if (page === "model") {
+                        showModel();
+                    }
+                    if (page === "diwali") {
+                        showDiwali();
+                    }
+                });
+
+            // Update active tab styling
+            document.querySelectorAll('.navigation li').forEach((li) => li.classList.remove("active"));
+            element.parentElement.classList.add("active");
+
+        }
+
+       
+    </script>
+
+</body>
+
+</html>

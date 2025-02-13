@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Night Light Effect (High Altitude Visible)</name>
+
+    <!-- Styles for different cities -->
+    <Style id="delhi_style">
+      <IconStyle>
+         <scale>3</scale> 
+        <Icon>
+          <href>https://i.ibb.co/Z6JHztBm/bg.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <Style id="mumbai_style">
+      <IconStyle>
+        <scale>2</scale> 
+        <Icon>
+          <href>https://i.ibb.co/KpVjxt13/bg1.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <Style id="kolkata_style">
+      <IconStyle>
+         <scale>4</scale> 
+        <Icon>
+          <href>https://i.ibb.co/7xCsnv00/bg2.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <Style id="chennai_style">
+      <IconStyle>
+        <scale>4</scale> 
+        <Icon>
+          <href>https://i.ibb.co/BHyNCcqF/bg3.png</href>
+        </Icon>
+      </IconStyle>
+    </Style>
+
+    <!-- Group: Delhi Cluster -->
+    <Folder>
+      <name>Delhi Cluster</name>
+      <Placemark><name>Delhi</name><styleUrl>#delhi_style</styleUrl><Point><coordinates>77.216721,28.644800,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#delhi_style</styleUrl><Point><coordinates>77.8,29.2,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#delhi_style</styleUrl><Point><coordinates>76.5,28.9,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#delhi_style</styleUrl><Point><coordinates>78.2,28.7,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#delhi_style</styleUrl><Point><coordinates>75.9,28.4,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#delhi_style</styleUrl><Point><coordinates>78.7,29.4,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- Group: Mumbai Cluster -->
+    <Folder>
+      <name>Mumbai Cluster</name>
+      <Placemark><name>Mumbai</name><styleUrl>#mumbai_style</styleUrl><Point><coordinates>72.877426,19.076090,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#mumbai_style</styleUrl><Point><coordinates>73.5,19.5,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#mumbai_style</styleUrl><Point><coordinates>72.3,19.2,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#mumbai_style</styleUrl><Point><coordinates>74.1,19.9,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#mumbai_style</styleUrl><Point><coordinates>71.9,18.8,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#mumbai_style</styleUrl><Point><coordinates>73.8,20.3,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- Group: Kolkata Cluster -->
+    <Folder>
+      <name>Kolkata Cluster</name>
+      <Placemark><name>Kolkata</name><styleUrl>#kolkata_style</styleUrl><Point><coordinates>88.363892,22.572645,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#kolkata_style</styleUrl><Point><coordinates>88.9,23.0,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#kolkata_style</styleUrl><Point><coordinates>87.8,22.6,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#kolkata_style</styleUrl><Point><coordinates>89.4,22.8,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#kolkata_style</styleUrl><Point><coordinates>86.9,22.3,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#kolkata_style</styleUrl><Point><coordinates>90.1,23.1,0</coordinates></Point></Placemark>
+    </Folder>
+
+    <!-- Group: Chennai Cluster -->
+    <Folder>
+      <name>Chennai Cluster</name>
+      <Placemark><name>Chennai</name><styleUrl>#chennai_style</styleUrl><Point><coordinates>80.270721,13.082680,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#chennai_style</styleUrl><Point><coordinates>81.0,13.4,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#chennai_style</styleUrl><Point><coordinates>79.5,13.1,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#chennai_style</styleUrl><Point><coordinates>81.6,13.6,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#chennai_style</styleUrl><Point><coordinates>78.9,12.9,0</coordinates></Point></Placemark>
+      <Placemark><styleUrl>#chennai_style</styleUrl><Point><coordinates>82.2,13.7,0</coordinates></Point></Placemark>
+    </Folder>
+
+  </Document>
+</kml>

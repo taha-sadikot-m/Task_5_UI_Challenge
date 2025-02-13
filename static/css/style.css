@@ -1,0 +1,101 @@
+.mainContainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2f363e;
+}
+
+
+
+body {
+    padding: 0px;
+    margin: 0px;    
+}
+
+.container {
+  
+    width: 25%;
+    height: 25%;
+    display: block;
+}
+
+
+.circle {
+    stroke-dashoffset: 400px;
+    stroke-dasharray: 400px;
+    stroke-width: 34.5px;
+  
+}
+
+#blueCircle {
+    stroke-dashoffset: 130px;
+    stroke-dasharray: 130px;
+}
+
+
+@keyframes strokeAnimRed {
+    0% {
+        stroke-dashoffset: 401px;
+    }
+    50% {
+        stroke-dashoffset: 55px;
+    }
+    100% {
+        stroke-dashoffset: 55px;
+    }
+}
+
+@keyframes strokeAnimYel {
+    0% {
+        stroke-dashoffset: 401px;
+    }
+    50% {
+        stroke-dashoffset: 170px;
+    }
+    100% {
+        stroke-dashoffset: 170px;
+    }
+}
+
+@keyframes strokeAnimGreen {
+    0% {
+        stroke-dashoffset: 401px;
+    }
+    50% {
+        stroke-dashoffset: 230px;
+    }
+    100% {
+        stroke-dashoffset: 230px;
+    }
+}
+
+@keyframes strokeAnimBlue {
+    0% {
+        stroke-dashoffset: 130px;
+    }
+    50% {
+        stroke-dashoffset: 0px;
+    }
+    100% {
+        stroke-dashoffset: 0px;
+    }
+}
+
+
+#redCircle {
+    animation: strokeAnimRed 1.5s ease 0.2s forwards;
+}
+
+#yelCircle {
+    animation: strokeAnimYel 1.5s ease 0.2s forwards;
+}
+
+#greenCircle {
+    animation: strokeAnimGreen 1.5s ease 0.2s forwards;
+}
+
+#blueCircle {
+    animation: strokeAnimBlue 1.5s ease 0.2s forwards;
+}

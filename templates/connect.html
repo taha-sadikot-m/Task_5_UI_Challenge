@@ -1,0 +1,220 @@
+{% block content %}
+<div class="paddingContainer">
+    <div class="form-container">
+        <h2>STATUS :- <button id="status">Disconnected</button></h2>
+
+        <div class="multi-step">
+            <div class="step active">
+                <p>1</p>
+            </div>
+            <div class="bar "></div>
+            <div class="step">
+                <p>2</p>
+            </div>
+            <div class="bar"></div>
+            <div class="step">
+                <p>3</p>
+            </div>
+        </div>
+
+        <div class="multi-step-form">
+            <div class="form-step active"> <!-- Step 1 -->
+                <input type="text" id="ip" placeholder="Enter IP Address">
+                <input type="text" id="username" placeholder="Enter Username">
+            </div>
+
+            <div class="form-step"> <!-- Step 2 -->
+                <input type="text" id="port" placeholder="Enter Port Number">
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+
+            <div class="form-step"> <!-- Step 3 -->
+                <input type="number" id="nodes" placeholder="Enter Number Of Nodes">
+                <br>
+                <button id="submit">Connect</button>
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="button" class="prev">Previous</button>
+            <button type="button" class="next">Next</button>
+        </div>
+
+    </div>
+</div>
+
+
+<style>
+    .multi-step {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .step {
+        background-color: #2f363e;
+        border-radius: 50%;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5), inset 2px 2px 3px rgba(255, 255, 255, 0.25), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bar {
+        height: 10px;
+        width: 10px;
+        background-color: #aaa;
+        width: 30%;
+        border-radius: 5px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10%;
+    }
+
+
+    .multi-step-form {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .multi-step-form .form-step {
+        display: none;
+    }
+
+    .multi-step-form .form-step.active {
+        display: block;
+    }
+
+
+
+    .multi-step .step.active {
+        background: #29fd53;
+        color: #2f363e;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25), inset 2px 2px 3px rgba(255, 255, 255, 0.25), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+        transition-delay: 0s;
+        position: relative;
+        font-size: 1.75rem;
+        width: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        transition-delay: 0.2s;
+    }
+
+    .multi-step .step.active p::before {
+        content: '';
+        position: relative;
+        inset: 10px;
+        background-color: #2f363e;
+        border-radius: 50%;
+        box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5), inset 2px 2px 3px rgba(255, 255, 255, 0.25), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+        transition: 0.5s;
+        transform: scale(1);
+    }
+</style>
+
+<script>
+
+setupEventListeners();
+function setupEventListeners() {
+    const submitButton = document.getElementById('submit');
+    
+    if (submitButton) {
+        submitButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default form submission if inside a form
+            
+            const ip = document.getElementById('ip').value;
+            const username = document.getElementById('username').value;
+            const port = document.getElementById('port').value;
+            const password = document.getElementById('password').value;
+            const nodes = document.getElementById('nodes').value;
+
+            const data = { ip, username, port, password, nodes };
+
+            document.getElementById('status').innerText = 'Connecting...';
+
+            (async function connectToAPI() {
+                try {
+                    const response = await fetch('/setup', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        document.getElementById('status').innerText = 'Connected';
+                    } else {
+                        document.getElementById('status').innerText = 'Failed to Connect';
+                    }
+                } catch (error) {
+                    document.getElementById('status').innerText = 'Error occurred';
+                }
+            })(); 
+        });
+    }
+}
+
+
+
+
+
+
+    initMultiStepForm();
+    function initMultiStepForm() {
+        let currentpage = 1;
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        const steps = document.querySelectorAll('.multi-step-form .form-step');
+        const stepNodes = document.querySelectorAll('.multi-step .step');
+
+        function movepage() {
+            // Enable or disable buttons
+            prev.disabled = currentpage === 1;
+            next.disabled = currentpage === steps.length;
+
+            // Remove active class from the current form step and step node
+            document.querySelector('.multi-step-form .form-step.active')?.classList.remove('active');
+            document.querySelector('.multi-step     .step.active')?.classList.remove('active');
+
+            // Add active class to the current form step and step node
+            steps[currentpage - 1]?.classList.add('active');
+            stepNodes[currentpage - 1]?.classList.add('active');
+        }
+
+        prev.addEventListener('click', function () {
+            if (currentpage > 1) {
+                currentpage -= 1;
+                movepage();
+            }
+        });
+
+        next.addEventListener('click', function () {
+            if (currentpage < steps.length) {
+                currentpage += 1;
+                movepage();
+            }
+        });
+
+        // Initialize first step and step node as active
+        steps[0].classList.add('active');
+        stepNodes[0].classList.add('active');
+    };
+
+
+</script>
+
+
+
+{% endblock %}

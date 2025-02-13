@@ -1,0 +1,241 @@
+:root {
+    --md-sys-color-google-blue: #4285f4;
+    --md-sys-color-google-red: #ea4335;
+    --md-sys-color-google-yellow: #fbbc05;
+    --md-sys-color-google-green: #34a853;
+  }
+
+
+  .mic {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    }
+  .mic::before, .mic::after {
+    content: "";
+    position: absolute;
+      top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    z-index: 2;
+    box-shadow: 0 0 20px 20px #34a853;
+
+  }
+  .mic::before {
+    width: 150px;
+    height: 150px;
+    background-color: #2f363e;
+    animation: circle-size 0.8s linear infinite alternate;
+    
+  }
+  .mic::after {
+    width: 100px;
+    height: 100px;
+    background-color: #2f363e;
+    animation: circle-size 0.8s linear infinite alternate;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(255, 255, 255, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75)
+ 
+  }
+  .mic-icon {
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -100%) scale(2);
+    display: block;
+    width: 16px;
+    height: 12px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+    border: 2px solid;
+    border-top: 0;
+    margin-top: 20px;
+    z-index: 3;
+  }
+  .mic-icon::before, .mic-icon::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+  }
+  .mic-icon::before {
+    width: 2px;
+    height: 5px;
+    top: calc(100% + 1px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #fff;
+  }
+  .mic-icon::after {
+    border: 2px solid;
+    width: 8px;
+    height: 18px;
+    left: 50%;
+    top: -10px;
+    border-radius: 4px;
+    transform: translate(-50%, 0);
+  }
+  
+  @keyframes circle-size {
+    from {
+      width: 100px;
+      height: 100px;
+    }
+    to {
+      width: 130px;
+      height: 130px;
+    }
+  }
+  @keyframes shadow-rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+
+
+
+  .googleVoice{
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+ }
+
+
+  @property --gradBlueRed {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 25%;
+  }
+  
+  @property --gradRedBlue {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 25%;
+  }
+  
+  @property --gradRedYellow {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+  }
+  
+  @property --gradYellowRed {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 50%;
+  }
+  
+  @property --gradYellowGreen {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 75%;
+  }
+  
+  @property --gradGreenYellow {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 75%;
+  }
+  
+
+  
+  .googleVoice .rect {
+    max-inline-size: 880px;
+    inline-size: 80dvw;
+    block-size: 5px;
+    background: linear-gradient(
+      to right,
+      var(--md-sys-color-google-blue) 0 var(--gradBlueRed),
+      var(--md-sys-color-google-red) var(--gradRedBlue) var(--gradRedYellow),
+      var(--md-sys-color-google-yellow) var(--gradYellowRed)
+        var(--gradYellowGreen),
+      var(--md-sys-color-google-green) var(--gradGreenYellow) 100%
+    );
+    transform-origin: center;
+    display: inline-block;
+    position: relative;
+    transition: inline-size 0.3s ease, --gradBlueRed 0.5s, --gradRedBlue 0.5s,
+      --gradRedYellow 0.5s, --gradYellowRed 0.5s, --gradYellowGreen 0.5s,
+      --gradGreenYellow 0.5s, filter 0.5s;
+    animation: voice 2s ease infinite alternate;
+    border-radius: 5px;
+  }
+  
+  .googleVoice .rect.blur {
+    filter: blur(16px);
+  }
+  
+  @keyframes voice {
+    0% {
+      --gradBlueRed: 80%;
+      --gradRedBlue: 84%;
+      --gradRedYellow: 88%;
+      --gradYellowRed: 92%;
+      --gradYellowGreen: 96%;
+      --gradGreenYellow: 100%;
+    }
+  
+    15% {
+      --gradBlueRed: 10%;
+      --gradRedBlue: 14%;
+      --gradRedYellow: 70%;
+      --gradYellowRed: 74%;
+      --gradYellowGreen: 96%;
+      --gradGreenYellow: 100%;
+    }
+  
+    30% {
+      --gradBlueRed: 10%;
+      --gradRedBlue: 14%;
+      --gradRedYellow: 80%;
+      --gradYellowRed: 84%;
+      --gradYellowGreen: 90%;
+      --gradGreenYellow: 100%;
+    }
+  
+    45% {
+      --gradBlueRed: 10%;
+      --gradRedBlue: 14%;
+      --gradRedYellow: 60%;
+      --gradYellowRed: 66%;
+      --gradYellowGreen: 76%;
+      --gradGreenYellow: 80%;
+    }
+  
+    60% {
+      --gradBlueRed: 0%;
+      --gradRedBlue: 5%;
+      --gradRedYellow: 10%;
+      --gradYellowRed: 15%;
+      --gradYellowGreen: 90%;
+      --gradGreenYellow: 100%;
+    }
+  
+    75% {
+      --gradBlueRed: 0%;
+      --gradRedBlue: 5%;
+      --gradRedYellow: 10%;
+      --gradYellowRed: 15%;
+      --gradYellowGreen: 20%;
+      --gradGreenYellow: 40%;
+    }
+  
+    100% {
+      --gradBlueRed: 80%;
+      --gradRedBlue: 84%;
+      --gradRedYellow: 88%;
+      --gradYellowRed: 92%;
+      --gradYellowGreen: 96%;
+      --gradGreenYellow: 100%;
+    }
+  }
+  
