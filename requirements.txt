@@ -1,4 +1,7 @@
-﻿affine==2.4.0
+pip
+setuptools
+wheel
+affine==2.4.0
 asttokens==3.0.0
 attrs==25.1.0
 bcrypt==4.2.1
