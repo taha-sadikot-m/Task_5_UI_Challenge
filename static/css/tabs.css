@@ -9,7 +9,7 @@
 
 body {
 
-  background: #2f363e;
+  background: #1c1f2a;
 }
 
 .navigation {
@@ -18,7 +18,7 @@ body {
   bottom:0px;  /* Distance from bottom */
   width: 100%;
   height: 100px;
-  background: #2f363e;
+  background: #272d3b;
   box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
     10px 10px 70px rgba(0, 0, 0, 0.25), 
     inset 5px 5px 10px rgba(0, 0, 0, 0.5),
@@ -49,18 +49,18 @@ body {
   height: 5px;
   border-radius: 50%;
   transform: 0.5s;
-  background: #0f0;
+  background: #7169e1;
   visibility: hidden;
 }
 
 .navigation li.active::before {
-  background-color: #0f0;
-  box-shadow: 0 0 5px #0f0, 
-  0 0 10px #0f0,
-   0 0 20px #0f0,
-    0 0 30px #0f0,
-    0 0 40px #0f0,
-     0 0 50px #0f0;
+  background-color: #7169e1;
+  box-shadow: 0 0 5px #7169e1, 
+  0 0 10px #7169e1,
+   0 0 20px #7169e1,
+    0 0 30px #7169e1,
+    0 0 40px #7169e1,
+     0 0 50px #7169e1;
 visibility: visible;
 }
 
@@ -87,12 +87,12 @@ visibility: visible;
 }
 
 .navigation li:hover a .icon {
-  color: #29fd53;
+  color: #7169e1;
 }
 
 .navigation li.active a .icon {
   transform: translateY(-45px);
-  background: #29fd53;
+  background: #7169e1;
   color: #fff;
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
     inset 2px 2px 3px rgba(255, 255, 255, 0.25),
@@ -104,7 +104,7 @@ visibility: visible;
   content: '';
   position: absolute;
   inset: 10px;
-  background-color: #2f363e;
+  background-color: #272d3b;
   border-radius: 50%;
   box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.5),
     inset 2px 2px 3px rgba(255, 255, 255, 0.25),

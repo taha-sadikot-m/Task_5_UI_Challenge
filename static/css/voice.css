@@ -2,7 +2,7 @@
     --md-sys-color-google-blue: #4285f4;
     --md-sys-color-google-red: #ea4335;
     --md-sys-color-google-yellow: #fbbc05;
-    --md-sys-color-google-green: #34a853;
+    --md-sys-color-google-green: #7169e1;
   }
 
 
@@ -21,20 +21,20 @@
     transform: translate(-50%, -50%);
     border-radius: 100%;
     z-index: 2;
-    box-shadow: 0 0 20px 20px #34a853;
+    box-shadow: 0 0 20px 20px #7169e1;
 
   }
   .mic::before {
     width: 150px;
     height: 150px;
-    background-color: #2f363e;
+    background-color: #272d3b;
     animation: circle-size 0.8s linear infinite alternate;
     
   }
   .mic::after {
     width: 100px;
     height: 100px;
-    background-color: #2f363e;
+    background-color: #272d3b;
     animation: circle-size 0.8s linear infinite alternate;
     box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25), 10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(255, 255, 255, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75)
  

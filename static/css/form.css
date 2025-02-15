@@ -3,7 +3,7 @@
     width: 90%;
     margin: 50px auto;
     padding: 20px;
-    background: #2f363e;
+    background: #272d3b;
     border-radius: 10px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5),
                 inset 2px 2px 5px rgba(255, 255, 255, 0.1),
@@ -16,7 +16,7 @@
 .form-container h2 {
     margin-bottom: 15px;
     font-size: 22px;
-    color: #29fd53;
+    color: #7169e1;
 }
 
 
@@ -50,9 +50,9 @@ input {
 button {
     padding: 10px;
     font-size: 16px;
-    color: #2f363e;
+    color: #272d3b;
     font-weight: bold;
-    background: #29fd53;
+    background: #7169e1;
     border: none;
     border-radius: 5px;
     cursor: pointer;

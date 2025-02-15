@@ -30,8 +30,8 @@
   inline-size: 243px;
   block-size: 243px;
   transform-origin: 50% 50%;
-  background-color: #29fd53;
-  background-image: linear-gradient(#2f363e 0 var(--gradBluePurpleStart), #10dc60 var(--gradPurpleStart) var(--gradPurpleEnd), #36ad64 var(--gradBluePurpleEnd));
+  background-color: #7169e1;
+  background-image: linear-gradient(#272d3b 0 var(--gradBluePurpleStart), #10dc60 var(--gradPurpleStart) var(--gradPurpleEnd), #36ad64 var(--gradBluePurpleEnd));
   scale: 0;
   transition: scale 0.5s ease;
   clip-path: path("M0 121.5C0 54.3974 54.3974 0 121.5 0C188.603 0 243 54.3974 243 121.5C243 188.603 188.603 243 121.5 243C54.3974 243 0 188.603 0 121.5Z");
